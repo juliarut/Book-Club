@@ -5,9 +5,7 @@ module.exports = {
     extend: {
       colors: {
         background: "#FAF3E0",
-
         card: "#A7D7C5",
-
         text: "#1A1A1A",
       },
       fontFamily: {
@@ -16,5 +14,22 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    themes: [
+      {
+        mytheme: {
+          primary: "#A7D7C5",
+          secondary: "#FAF3E0",
+          accent: "#F4C430",
+          neutral: "#1A1A1A",
+          "base-100": "#FAF3E0",
+          info: "#3ABFF8",
+          success: "#36D399",
+          warning: "#FBBD23",
+          error: "#F87272",
+        },
+      },
+    ],
+  },
 };
