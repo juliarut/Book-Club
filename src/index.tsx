@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
-import { routeTree } from "./routeTree.gen"; // Autogenereras
+import { rootRoute } from "./routes/__root";
+import { homeRoute } from "./routes/home";
+import "./index.css";
 
-declare module "@tanstack/react-router" {
-  interface Register {
-    router: typeof router;
-  }
-}
+rootRoute.addChildren([homeRoute]);
 
-const router = createRouter({ routeTree });
+const router = createRouter({
+  routeTree: rootRoute,
+});
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
