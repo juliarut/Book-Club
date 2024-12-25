@@ -4,9 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        background: "#FAF3E0",
-        card: "#A7D7C5",
-        text: "#1A1A1A",
+        primary: "#4A90E2",
+        secondary: "#F5F5F5",
+        accent: "#F4A261",
+        neutral: "#333333",
+        "base-100": "#FFFFFF",
       },
       fontFamily: {
         sans: ["Inter", "Arial", "sans-serif"],
@@ -19,11 +21,11 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: "#A7D7C5",
-          secondary: "#FAF3E0",
-          accent: "#F4C430",
-          neutral: "#1A1A1A",
-          "base-100": "#FAF3E0",
+          primary: "#4A90E2",
+          secondary: "#F5F5F5",
+          accent: "#F4A261",
+          neutral: "#333333",
+          "base-100": "#FFFFFF",
           info: "#3ABFF8",
           success: "#36D399",
           warning: "#FBBD23",

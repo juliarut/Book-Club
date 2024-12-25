@@ -1,7 +1,7 @@
 import React from "react";
 import { createRootRoute } from "@tanstack/react-router";
 import { Outlet, Link } from "@tanstack/react-router";
-import { searchRoute } from "./search"; // Importera searchRoute
+import { searchRoute } from "./search";
 
 export const rootRoute = createRootRoute({
   component: () => <RootLayout />,
@@ -16,7 +16,6 @@ export const rootRoute = createRootRoute({
   ),
 });
 
-// Lägg till sökrutten som en child
 rootRoute.addChildren([searchRoute]);
 
 function RootLayout() {
