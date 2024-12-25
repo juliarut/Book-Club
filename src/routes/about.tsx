@@ -1,9 +1,19 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createRoute } from "@tanstack/react-router";
+import { rootRoute } from "./__root";
 
-export const Route = createFileRoute("/about")({
+export const aboutRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/about",
   component: About,
 });
 
 function About() {
-  return <div className="p-4">Hello from About Page!</div>;
+  return (
+    <div>
+      <h1 className="text-3xl font-bold">Om Bokklubben</h1>
+      <p>
+        Här kan du läsa mer om vår bokklubb och vårt fokus på Nobelpristagare.
+      </p>
+    </div>
+  );
 }

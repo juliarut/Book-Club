@@ -4,9 +4,10 @@ import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { rootRoute } from "./routes/__root";
 import { homeRoute } from "./routes/home";
 import { searchRoute } from "./routes/search";
+import { aboutRoute } from "./routes/about";
 import "./index.css";
 
-rootRoute.addChildren([homeRoute, searchRoute]);
+rootRoute.addChildren([homeRoute, searchRoute, aboutRoute]);
 
 const router = createRouter({
   routeTree: rootRoute,
