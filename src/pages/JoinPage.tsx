@@ -1,17 +1,21 @@
 import React, { useState } from "react";
+import { registerUser } from "../mockBackend";
 
 export default function JoinPage() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ name, email, password });
-    alert("Du har gått med i Bokklubben!");
-    setName("");
-    setEmail("");
-    setPassword("");
+    const result = registerUser({ name, email, password });
+    setMessage(result);
+    if (result === "Registrering lyckades!") {
+      setName("");
+      setEmail("");
+      setPassword("");
+    }
   };
 
   return (
@@ -19,6 +23,13 @@ export default function JoinPage() {
       <h1 className="text-3xl font-bold text-center mb-6">
         Gå med i Bokklubben
       </h1>
+      {message && (
+        <p
+          className={`text-center mb-4 ${message.includes("lyckades") ? "text-green-500" : "text-red-500"}`}
+        >
+          {message}
+        </p>
+      )}
       <form
         onSubmit={handleSubmit}
         className="max-w-md mx-auto bg-white p-6 shadow-md rounded"
