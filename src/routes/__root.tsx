@@ -1,9 +1,11 @@
 import { createRootRoute } from "@tanstack/react-router";
 import { Outlet, Link } from "@tanstack/react-router";
 import React, { useState } from "react";
+import NotFoundPage from "../pages/NotFoundPage";
 
 export const rootRoute = createRootRoute({
   component: RootLayout,
+  notFoundComponent: NotFoundPage,
 });
 
 function RootLayout() {
