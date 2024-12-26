@@ -1,6 +1,7 @@
 import React from "react";
 import { createRoute } from "@tanstack/react-router";
 import { rootRoute } from "./__root";
+import { Link } from "@tanstack/react-router";
 
 export const homeRoute = createRoute({
   getParentRoute: () => rootRoute,
@@ -43,12 +44,15 @@ function Home() {
           Utforska och diskutera Nobelpristagare i litteratur.
         </p>
         <div className="mt-6 flex justify-center gap-4">
-          <button className="btn btn-primary flex items-center gap-2">
+          <Link to="/join" className="btn btn-primary flex items-center gap-2">
             <span>Gå med nu</span>
-          </button>
-          <button className="btn btn-secondary flex items-center gap-2">
+          </Link>
+          <Link
+            to="/login"
+            className="btn btn-secondary flex items-center gap-2"
+          >
             <span>Logga in</span>
-          </button>
+          </Link>
         </div>
       </div>
 
