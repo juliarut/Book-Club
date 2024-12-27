@@ -25,4 +25,9 @@ Accessibility:
 Simple layout with minimal distractions.
 Large fonts and good contrast for readability.
 
+## Wireframe
+Här är wireframen för projektet som beskriver användarflödet:
+
+![Wireframe](https://github.com/juliarut/book-club/blob/main/wireframe.jpeg?raw=true)
+
 
