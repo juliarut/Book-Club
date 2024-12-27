@@ -7,6 +7,7 @@ import { searchRoute } from "./routes/search";
 import { aboutRoute } from "./routes/about";
 import { joinRoute } from "./routes/joinRoute";
 import { loginRoute } from "./routes/loginRoute";
+import { discussionRoute } from "./routes/discussionRoute";
 import "./index.css";
 
 rootRoute.addChildren([
@@ -15,6 +16,7 @@ rootRoute.addChildren([
   aboutRoute,
   joinRoute,
   loginRoute,
+  discussionRoute,
 ]);
 
 const router = createRouter({

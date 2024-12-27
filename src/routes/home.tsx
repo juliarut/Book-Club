@@ -28,12 +28,6 @@ function Home() {
     location: "Bokklubbens bibliotek, Salen A",
   };
 
-  const recentDiscussionPoints = [
-    "Hur reflekterar boken författarens kulturella bakgrund?",
-    "Vilken roll spelar karaktärernas utveckling för berättelsen?",
-    "Vilka teman är mest relevanta idag?",
-  ];
-
   return (
     <div className="p-8 space-y-8 bg-secondary text-neutral">
       <div className="text-center">
@@ -75,7 +69,6 @@ function Home() {
             <h3 className="text-lg font-bold">Rekommenderad bok:</h3>
             <p>{currentLaureate.book.title}</p>
             <p>{currentLaureate.book.description}</p>
-            <button className="btn btn-accent mt-4">Läs Mer</button>
           </div>
         </div>
 
@@ -96,22 +89,21 @@ function Home() {
               Kom och delta i vår diskussion om den aktuella Nobelpristagaren
               och deras verk.
             </p>
-            <button className="btn btn-accent mt-4">
-              Lägg till i Kalender
-            </button>
           </div>
         </div>
-      </div>
 
-      <div className="card bg-base-100 shadow-md p-6">
-        <h2 className="text-2xl font-bold mb-4">Diskussionsfrågor</h2>
-        <ul className="list-disc list-inside">
-          {recentDiscussionPoints.map((point, index) => (
-            <li key={index} className="mb-2">
-              {point}
-            </li>
-          ))}
-        </ul>
+        <div className="card bg-primary text-base-100 shadow-md p-6">
+          <div className="card-body">
+            <h2 className="text-2xl font-bold">Diskussionssida</h2>
+            <p className="mt-4">
+              Delta i diskussioner inför nästa träff och håll kontakten med
+              andra medlemmar i bokklubben.
+            </p>
+            <Link to="/discussion" className="btn bg-white text-primary mt-4">
+              Gå till Diskussionssidan
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
