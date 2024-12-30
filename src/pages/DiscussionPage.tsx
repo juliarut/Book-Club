@@ -1,13 +1,14 @@
-import React, { useState } from "react";
-import { addComment, getComments } from "../mockBackend";
+import React, { useState, useEffect } from "react";
+import { addComment, getComments, getLoggedInUser } from "../mockBackend";
 
 export default function DiscussionPage() {
   const [comments, setComments] = useState(() => getComments());
   const [newComment, setNewComment] = useState("");
-  const [user] = useState(() => {
-    const loggedInUser = localStorage.getItem("loggedInUser");
-    return loggedInUser ? JSON.parse(loggedInUser).name : null;
-  });
+  const [user, setUser] = useState(() => getLoggedInUser());
+
+  useEffect(() => {
+    setUser(getLoggedInUser());
+  }, []);
 
   const handleAddComment = () => {
     if (!newComment.trim()) return;
@@ -15,7 +16,7 @@ export default function DiscussionPage() {
       alert("Du måste vara inloggad för att kommentera.");
       return;
     }
-    const updatedComments = addComment(user, newComment.trim());
+    const updatedComments = addComment(user.name, newComment.trim());
     setComments(updatedComments);
     setNewComment("");
   };
@@ -38,7 +39,9 @@ export default function DiscussionPage() {
             </button>
           </>
         ) : (
-          <p className="text-red-500">Logga in för att kunna kommentera.</p>
+          <p className="text-red-500">
+            Du måste vara inloggad för att kunna kommentera.
+          </p>
         )}
       </div>
       <div className="bg-gray-100 p-6 rounded shadow">

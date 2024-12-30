@@ -34,7 +34,17 @@ export function loginUser(email: string, password: string): string {
   if (!user) {
     return "Fel e-postadress eller lösenord.";
   }
+  localStorage.setItem("loggedInUser", JSON.stringify(user));
   return "Inloggning lyckades!";
+}
+
+export function getLoggedInUser(): User | null {
+  const loggedInUser = localStorage.getItem("loggedInUser");
+  return loggedInUser ? JSON.parse(loggedInUser) : null;
+}
+
+export function logoutUser(): void {
+  localStorage.removeItem("loggedInUser");
 }
 
 export function addComment(user: string, text: string): Comment[] {

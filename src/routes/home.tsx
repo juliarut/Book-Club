@@ -54,7 +54,7 @@ function Home() {
         <div className="card bg-primary text-base-100 shadow-md p-6">
           <figure>
             <img
-              src="/images/hands.jpeg"
+              src="/book-club/images/hands.jpeg"
               alt="Hands"
               className="w-full h-60 object-cover"
             />
